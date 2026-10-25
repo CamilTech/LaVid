@@ -5,6 +5,15 @@ body {
   margin-top: 80px;
 }
 
+.header-frame {
+  height: 100vh;
+  clip-path: inset(0 0 calc(100% - 80px) 0);
+}
+
+.header-frame.sidebar-open {
+  clip-path: none;
+}
+
 
 /* --- Carrossel --- */
 
@@ -107,4 +116,3 @@ body {
     }
   }
 }
-

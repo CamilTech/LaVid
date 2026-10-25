@@ -10,6 +10,7 @@ body {
 }
 
 .header-frame-content {
+  background-color: transparent;
   pointer-events: none;
 }
 
@@ -134,7 +135,7 @@ a, li{
   flex-direction: column;
   overflow-y: auto;
   transition: .3s ease;
-  z-index: 10;
+  z-index: 999;
   pointer-events: auto;
 
   & .backBtn{
