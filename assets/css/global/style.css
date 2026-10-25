@@ -9,9 +9,29 @@ body {
   color: var(--preto);
 }
 
+.header-frame-content {
+  pointer-events: none;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-size: 35px !important;
+  color: var(--branco);
+}
+
+.black {
+  color: var(--preto);
+}
+
+a, li{
+  text-decoration: none;
+  list-style: none;
+}
+
 :root {
   /* cores principais */
   --roxo: #6d2855;
+  --roxo-claro: #835589;
   --vermelho: #631c1b;
   --marrom: #68381d;
   --verde: #22822e;
@@ -21,9 +41,22 @@ body {
 }
 
 /* HEADER */
+
+.header-frame {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: block;
+  width: 100%;
+  height: 80px;
+  border: 0;
+}
+
 .cabecalho {
   background-color: var(--roxo);
+  height: 80px;
   padding: 15px;
+  pointer-events: auto;
 
   & .interface {
     align-items: center;
@@ -48,7 +81,7 @@ body {
       }
 
       label {
-        height: 20px;
+        height: 25px;
       }
     }
 
@@ -72,7 +105,7 @@ body {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          transition: .3s ease;
+          transition: 300ms ease;
         }
 
         span:nth-child(1) {
@@ -84,20 +117,69 @@ body {
         }
 
       }
-
-      & .ham-menu.active span:nth-child(1) {
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-      }
-
-      & .ham-menu.active span:nth-child(2) {
-        opacity: 0;
-      }
-
-      & .ham-menu.active span:nth-child(3) {
-        top: 50%;
-        transform: translate(-50%, 50%) rotate(-45deg);
-      }
     }
   }
+}
+
+/* Menu Sidebar */
+.off-screen-menu{
+  background-color: var(--branco);
+  height: 100vh;
+  width: min(450px, 100vw);
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  right: -450px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transition: .3s ease;
+  z-index: 10;
+  pointer-events: auto;
+
+  & .backBtn{
+    background-color: var(--roxo-claro);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: -425px;
+    border-radius: 100%;
+    transition: 300ms ease;
+    cursor: default;
+  }
+
+  & .account{
+    display: flex;
+    background-color: var(--roxo-claro);
+    padding: 10px;
+    padding-left: 30px;
+    align-items: center;
+    border-radius: 40px;
+    gap: 10px;
+  }
+}
+
+.off-screen-menu.active{
+  right: 0;
+
+  & .backBtn{
+    right: 425px;
+  }
+}
+
+.overlay{
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: #191a1680;
+  pointer-events: auto;
+}
+
+.overlay.hidden{
+  display: none;
 }

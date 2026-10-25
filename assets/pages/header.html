@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="../css/global/style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL,GRAD@400,0,0">
 
-<body>
+
+
+<body class="header-frame-content">
   <header class="cabecalho">
     <div class="interface">
 
@@ -11,14 +13,14 @@
 
       <section class="search">
         <label for="searchInput">
-          <span class="material-symbols-outlined">search</span>
+          <span class="material-symbols-outlined black" style="font-size: 25px !important;">search</span>
         </label>
         <input type="text" id="searchInput" placeholder="Pesquisar...">
       </section>
 
       <section class="aside-icons">
         <div class="carrinho">
-          <img src="" alt="Carrinho de Compras" class="cart-img">
+          <span class="material-symbols-outlined">shopping_cart</span>
         </div>
 
         <div class="ham-menu">
@@ -33,9 +35,46 @@
   </header>
 
   <aside class="off-screen-menu">
-    <span class="backBtn">
-    </span>
+    <div class="backBtn">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </div>
 
+    <div class="account">
+      <span class="material-symbols-outlined">person</span>
+      <p><b>Minha Conta</b></p>
+    </div>
+
+    <div class="access">
+      <ul>
+        <li>
+          <a href="">
+            <span class="material-symbols-outlined black">local_shipping</span>
+            Rastrear pedido
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="material-symbols-outlined black">Help</span>
+            Atendimento
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <nav class="departamentos">
+      <h2>Departamentos</h2>
+      <ul>
+        <li>Espumante</li>
+        <li>Destilados</li>
+        <li>Mais Bebidas</li>
+        <li>Gourmet</li>
+        <li>Premium</li>
+      </ul>
+    </nav>
     
   </aside>
+
+  <div class="overlay hidden" id="overlay"></div>
+
+  <script src="../js/script.js"></script>
 </body>
