@@ -65,7 +65,8 @@ prevBtn.addEventListener('click', () => {
   showSlide(current + 1);
 });
 
-// // autoplay opcional
-// setInterval(() => {
-//   showSlide(current + 1);
-// }, 7000); // muda a cada x segundos
+// autoplay opcional
+setInterval(() => {
+  showSlide(current + 1);
+}, 7000); // muda a cada x segundos
+

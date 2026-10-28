@@ -17,7 +17,6 @@ body {
 
 /* --- Carrossel --- */
 
-
 .espaço-banner {
   display: flex;
   justify-content: center;
@@ -115,4 +114,72 @@ body {
       right: -4%;
     }
   }
+}
+
+
+/* --- Area de Contato --- */
+
+.area-contato {
+  padding: 150px;
+
+  .formas-contato {
+    display: grid;
+    gap: 30px;
+
+    & .formulario {
+      background-color: #E7E3D9;
+      border-radius: 1.5em;
+      padding: 40px;
+
+      & form {
+        font-size: 20px;
+
+        & input {
+          width: 100%;
+          min-height: 3em;
+          display: grid;
+          gap: 7px;
+          border-radius: 20px;
+          border: 2px solid var(--preto);
+        }
+
+
+        .enviar-btn {
+          font-size: 17px;
+          color: var(--branco);
+          background-color: var(--verde);
+          border-radius: 30px;
+          border-style: none;
+        }
+      }
+    }
+
+    & .informacoes-contato{
+      h6{
+        font-size: 20px;
+      }
+    }
+
+    & .canais-contato {
+      & .icons {
+        display: flex;
+        gap: 30px;
+
+        & .icon {
+          max-width: 5%;
+          max-height: 5%;
+          background-color: var(--vermelho);
+          border-radius: 50%;
+
+          & img {
+            width: 100%;
+            object-fit: cover;
+            padding: 15%;
+          }
+        }
+      }
+    }
+  }
+
+
 }
