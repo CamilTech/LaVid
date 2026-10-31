@@ -10,7 +10,7 @@
 
 <body>
 
-  <iframe class="header-frame" src="assets/pages/header.html" title="Cabeçalho e menu principal"></iframe>
+  <iframe class="header-frame" src="assets/pages/iframes/header.html" title="Cabeçalho e menu principal"></iframe>
 
   <section class="banner-area">
     <div class="banners">
@@ -20,6 +20,7 @@
         <section class="espaço-banner">
           <div class="carousel">
             <section class="carousel-slides">
+
               <div class="slide active">
                 <img src="https://i.pinimg.com/736x/cb/87/e9/cb87e9fd308598d0a057448f2cdefb1e.jpg" alt="Imagem 1">
               </div>
@@ -31,6 +32,7 @@
               <div class="slide">
                 <img src="https://i.pinimg.com/736x/58/8c/59/588c59ab0e076f3c356ef3bdc13f0e45.jpg" alt="Imagem 3">
               </div>
+
             </section>
 
             <button class="prev">‹</button>
@@ -39,29 +41,29 @@
         </section>
       </div>
     </div>
-
   </section>
 
-  <!-- Resolver Depois -->
-  <!-- <section class="banner-area">
+  <section class="banner-area">
     <div class="banners">
-      <h1>Promoções</h1>
+      <h1>Novidades</h1>
 
       <div class="carrossel">
         <section class="espaço-banner">
           <div class="carousel">
             <section class="carousel-slides">
+
               <div class="slide active">
-                <img src="https://i.pinimg.com/736x/cb/87/e9/cb87e9fd308598d0a057448f2cdefb1e.jpg" alt="Imagem 5">
+                <img src="https://i.pinimg.com/736x/5d/f1/93/5df19341dc6cdb9b31f387441dcd2437.jpg" alt="Imagem 4">
               </div>
 
               <div class="slide">
-                <img src="https://i.pinimg.com/1200x/76/77/c8/7677c8d6f05d3cb4ce46860537597e4c.jpg" alt="Imagem 6">
+                <img src="https://i.pinimg.com/736x/e4/63/c3/e463c397d8d0011b15139277bf4c20d0.jpg" alt="Imagem 5">
               </div>
 
               <div class="slide">
-                <img src="https://i.pinimg.com/736x/58/8c/59/588c59ab0e076f3c356ef3bdc13f0e45.jpg" alt="Imagem 7">
+                <img src="https://i.pinimg.com/736x/f8/86/eb/f886eb0fa75b868ef3210e0ff41ed383.jpg" alt="Imagem 6">
               </div>
+
             </section>
 
             <button class="prev">‹</button>
@@ -70,9 +72,7 @@
         </section>
       </div>
     </div>
-
-    
-  </section> -->
+  </section>
 
   <!-- Vitrine (precisa de Banco) -->
 
@@ -82,29 +82,51 @@
     <h1>Contato</h1>
 
     <section class="formas-contato">
+
       <div class="formulario">
         <form action method="post">
-          <label for="nome">Nome: </label> <br>
+          <label for="name">Nome: </label> <br>
           <input type="text"> <br>
 
           <label for="email">Email: </label> <br>
-          <input type="text"> <br>
+          <input type="email"> <br>
 
           <label for="assunto">Assunto: </label> <br>
-          <input type="text"> <br>
+          <textarea name="message" id="message"></textarea> <br>
 
           <input type="submit" value="Enviar" class="enviar-btn">
         </form>
       </div>
 
-      <div class="informacoes-contato">
-        <p>La Vid - Inscrita sob o CNPJ: 00.000.000/0000-00</p>
+      <div class="local">
 
-        <h6>Email de contato:</h6>
-        <p>aaa@gmail.com</p>
+        <div class="informacoes-contato">
+          <div class="dados 1">
+            <p>La Vid - Inscrita sob o CNPJ: 00.000.000/0000-00</p>            
+          </div>
 
-        <h6>Loja Física:</h6>
-        <p>Rua Santa Rosa, 197/207 - Brás, São Paulo - SP - CEP: 00000-000</p>
+          <div class="dados 2">
+            <h6>Email de contato:</h6>
+            <p>aaa@gmail.com</p>            
+          </div>
+
+          <div class="dados 3">
+            <h6>Loja Física:</h6>
+            <p>Rua Santa Rosa, 197/207 - Brás, São Paulo - SP - CEP: 00000-000</p>            
+          </div>
+
+        </div>      
+
+        <iframe 
+          class="mapa" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2739.229753925744!2d-46.6009230499308!3d-23.588795697791575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b2d9212ff2b%3A0x4f4ebab2c9717dfa!2sAdega%20S%C3%A3o%20lucas!5e0!3m2!1spt-BR!2sbr!4v1793384086842!5m2!1spt-BR!2sbr" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+
+
       </div>
 
       <div class="canais-contato">
@@ -124,7 +146,6 @@
       </div>
 
     </section>
-
   </div>
 
   <script src="assets/js/index.js"></script>

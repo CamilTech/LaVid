@@ -13,60 +13,79 @@ window.addEventListener('message', (event) => {
   headerFrame.classList.toggle('sidebar-open', message.open);
 });
 
-/*---carrossel---*/
 
-const slides = document.querySelectorAll('.slide');
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
-const dots = document.querySelectorAll('.dot');
-let current = 0;
+/* --- Carrosséis independentes --- */
 
+const carrosseis = document.querySelectorAll('.carousel');
 
-function showSlide(index) {
-  if (index >= slides.length) {
-    current = 0;
-  } else if (index < 0) {
-    current = slides.length - 1;
-  } else {
-    current = index;
+carrosseis.forEach((carousel) => {
+
+  const slides = carousel.querySelectorAll('.slide');
+  const nextBtn = carousel.querySelector('.next');
+  const prevBtn = carousel.querySelector('.prev');
+
+  let current = 0;
+  let autoplay;
+
+  function showSlide(index) {
+
+    if (index >= slides.length) {
+      current = 0;
+    } else if (index < 0) {
+      current = slides.length - 1;
+    } else {
+      current = index;
+    }
+
+    slides.forEach((slide, i) => {
+
+      slide.classList.remove(
+        'active',
+        'prev-slide',
+        'next-slide'
+      );
+
+      if (i === current) {
+        slide.classList.add('active');
+
+      } else if (
+        i === (current - 1 + slides.length) % slides.length
+      ) {
+        slide.classList.add('prev-slide');
+
+      } else if (
+        i === (current + 1) % slides.length
+      ) {
+        slide.classList.add('next-slide');
+      }
+
+    });
+
   }
 
-  slides.forEach((slide, i) => {
-    slide.classList.remove(
-      'active',
-      'prev-slide',
-      'next-slide'
-    );
-
-    if (i === current) {
-      slide.classList.add('active');
-    } else if (
-      i === (current - 1 + slides.length) % slides.length
-    ) {
-      slide.classList.add('prev-slide');
-    } else if (
-      i === (current + 1) % slides.length
-    ) {
-      slide.classList.add('next-slide');
-    }
+  // Botão próximo
+  nextBtn.addEventListener('click', () => {
+    showSlide(current + 1);
+    resetAutoplay();
   });
 
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === current);
+  // Botão anterior
+  prevBtn.addEventListener('click', () => {
+    showSlide(current - 1);
+    resetAutoplay();
   });
-}
 
-showSlide(current);
+  // Reinicia o autoplay
+  function resetAutoplay() {
+    clearInterval(autoplay);
 
-nextBtn.addEventListener('click', () => {
-  showSlide(current - 1);
+    autoplay = setInterval(() => {
+      showSlide(current + 1);
+    }, 7000);
+  }
+
+  // Inicialização
+  showSlide(current);
+  resetAutoplay();
+
 });
-prevBtn.addEventListener('click', () => {
-  showSlide(current + 1);
-});
-
-// autoplay opcional
-setInterval(() => {
-  showSlide(current + 1);
-}, 7000); // muda a cada x segundos
-

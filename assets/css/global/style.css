@@ -9,6 +9,20 @@ body {
   color: var(--preto);
 }
 
+/*estilização geral de icones*/
+.icon {
+  max-width: 60px;
+  max-height: 60px;
+  background-color: var(--vermelho);
+  border-radius: 50%;
+
+  & img {
+    width: 100%;
+    object-fit: cover;
+    padding: 15%;
+  }
+}
+
 .header-frame-content {
   background-color: transparent;
   pointer-events: none;
@@ -24,7 +38,8 @@ body {
   color: var(--preto);
 }
 
-a, li{
+a,
+li {
   text-decoration: none;
   list-style: none;
 }
@@ -123,7 +138,7 @@ a, li{
 }
 
 /* Menu Sidebar */
-.off-screen-menu{
+.off-screen-menu {
   background-color: var(--branco);
   height: 100vh;
   width: min(450px, 100vw);
@@ -138,7 +153,7 @@ a, li{
   z-index: 999;
   pointer-events: auto;
 
-  & .backBtn{
+  & .backBtn {
     background-color: var(--roxo-claro);
     width: 50px;
     height: 50px;
@@ -152,26 +167,30 @@ a, li{
     cursor: default;
   }
 
-  & .account{
-    display: flex;
+  & .account {
     background-color: var(--roxo-claro);
     padding: 10px;
     padding-left: 30px;
-    align-items: center;
     border-radius: 40px;
-    gap: 10px;
+
+    & a {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--preto);
+    }
   }
 }
 
-.off-screen-menu.active{
+.off-screen-menu.active {
   right: 0;
 
-  & .backBtn{
+  & .backBtn {
     right: 425px;
   }
 }
 
-.overlay{
+.overlay {
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -181,6 +200,6 @@ a, li{
   pointer-events: auto;
 }
 
-.overlay.hidden{
+.overlay.hidden {
   display: none;
 }
